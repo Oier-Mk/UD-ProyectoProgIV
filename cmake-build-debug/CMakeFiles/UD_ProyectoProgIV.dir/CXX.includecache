@@ -1,0 +1,48 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/mentxaka/Documents/F - C & C++ Files/UD-ProyectoProgIV/src/Api.h
+
+/Users/mentxaka/Documents/F - C & C++ Files/UD-ProyectoProgIV/src/BaseDeDatos.h
+stdio.h
+-
+sqlite3.h
+/Users/mentxaka/Documents/F - C & C++ Files/UD-ProyectoProgIV/src/sqlite3.h
+Api.h
+/Users/mentxaka/Documents/F - C & C++ Files/UD-ProyectoProgIV/src/Api.h
+
+/Users/mentxaka/Documents/F - C & C++ Files/UD-ProyectoProgIV/src/Text.h
+Api.h
+/Users/mentxaka/Documents/F - C & C++ Files/UD-ProyectoProgIV/src/Api.h
+stdio.h
+-
+stdlib.h
+-
+
+/Users/mentxaka/Documents/F - C & C++ Files/UD-ProyectoProgIV/src/main.cpp
+sqlite3.h
+/Users/mentxaka/Documents/F - C & C++ Files/UD-ProyectoProgIV/src/sqlite3.h
+main.h
+/Users/mentxaka/Documents/F - C & C++ Files/UD-ProyectoProgIV/src/main.h
+stdio.h
+-
+stdlib.h
+-
+Api.h
+/Users/mentxaka/Documents/F - C & C++ Files/UD-ProyectoProgIV/src/Api.h
+Text.h
+/Users/mentxaka/Documents/F - C & C++ Files/UD-ProyectoProgIV/src/Text.h
+BaseDeDatos.h
+/Users/mentxaka/Documents/F - C & C++ Files/UD-ProyectoProgIV/src/BaseDeDatos.h
+
+/Users/mentxaka/Documents/F - C & C++ Files/UD-ProyectoProgIV/src/main.h
+
+/Users/mentxaka/Documents/F - C & C++ Files/UD-ProyectoProgIV/src/sqlite3.h
+stdarg.h
+-
+
