@@ -6,5 +6,6 @@
 #define UD_PROYECTOPROGIV_MAIN_H
 
 sqlite3 *db;
+int nF;
 
 #endif //UD_PROYECTOPROGIV_MAIN_H

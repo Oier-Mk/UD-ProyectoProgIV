@@ -357,10 +357,14 @@ void CASO1(ArrayList *f) { //ES USTED UN CLIENTE
 
 void CASO1_1(ArrayList *f) { //CASO DE ANADIR NUEVO FORMULARIO
     printf("Caso 1.1\n");
-    Formulario form = creaForm(f->nObjetos);
-    f->objetos[f->nObjetos - 1] = form;
-    printFormulario(f->objetos[f->nObjetos - 1]);
-    anadirEspacio(f);
+    if(nF<9){
+        Formulario form = creaForm(f->nObjetos);
+        f->objetos[f->nObjetos - 1] = form;
+        printFormulario(f->objetos[f->nObjetos - 1]);
+        anadirEspacio(f);
+        nF++;
+    }
+    else printf("No se puede añadir mas formilarios\n");
 }
 
 void CASO1_2(ArrayList *f) { //CASO DE MODIFICAR FORMULARIO
@@ -442,7 +446,7 @@ void CASO4() { //REGISTRAR USUARIO
     printf("Introduzca el nuevo usuario: ");usu = inputString(50);
     printf("Introduzca la contraseña: ");cont = inputString(50);
     printf("usu = %s,cont = %s\n",usu,cont);
-    int i = escribeU(usu,cont);
+    int i = escribeU(getNUsuarios()+1,usu,cont);
     if(i==0)printf("Usuario existente\n");
 }
 

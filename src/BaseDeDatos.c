@@ -131,12 +131,12 @@ int escribeR(int i,int p){
     }
     return 0;
 }
-int escribeU(char* nick, char* pass){
+int escribeU(int i,char* nick, char* pass){
     sqlite3_stmt *stmt;
     int result;
     if(1!=existeUsu(nick)){
         char sql[200];
-        sprintf(sql,"INSERT INTO Usuario VALUES ('%s','%s');",nick,pass);
+        sprintf(sql,"INSERT INTO Usuario VALUES (%i,'%s','%s');",i,nick,pass);
         result = sqlite3_prepare_v2(db, sql, strlen(sql), &stmt, NULL);
         printf("SQL query prepared (INSERT)\n");
         result = sqlite3_step(stmt);
@@ -155,6 +155,18 @@ int escribeU(char* nick, char* pass){
     }
     return 0;
 }
+int getEdad(int i){
+    sqlite3_stmt *stmt;
+    int result;
+    char sql[200] ;
+    sprintf(sql,"SELECT edad FROM Entrevistado where id = %i;",i);
+    result = sqlite3_prepare_v2(db, sql, strlen(sql), &stmt, NULL);
+    result = sqlite3_step(stmt) ;
+    int edad;
+    if(result == SQLITE_ROW) edad = sqlite3_column_int(stmt, 0);
+    return edad;
+}
+
 int getNEntrevistados(){
     sqlite3_stmt *stmt;
     int result;
@@ -167,6 +179,65 @@ int getNEntrevistados(){
     return cant;
 }
 
+int getNFormularios(){
+    sqlite3_stmt *stmt;
+    int result;
+    char sql[200] ;
+    sprintf(sql,"SELECT count(*) FROM Formulario;");
+    result = sqlite3_prepare_v2(db, sql, strlen(sql), &stmt, NULL);
+    result = sqlite3_step(stmt) ;
+    int cant;
+    if(result == SQLITE_ROW) cant = sqlite3_column_int(stmt, 0);
+    return cant;
+}
+
+int getNPreguntas(int i){
+    sqlite3_stmt *stmt;
+    int result;
+    char sql[200] ;
+    sprintf(sql,"SELECT count(*) FROM Pregunta WHERE id_p = %i;",i);
+    result = sqlite3_prepare_v2(db, sql, strlen(sql), &stmt, NULL);
+    result = sqlite3_step(stmt) ;
+    int cant;
+    if(result == SQLITE_ROW) cant = sqlite3_column_int(stmt, 0);
+    return cant;
+}
+
+int getNRespuestas(int i){
+    sqlite3_stmt *stmt;
+    int result;
+    char sql[200] ;
+    sprintf(sql,"SELECT count(*) FROM Respuesta WHERE id_p = %i;",i);
+    result = sqlite3_prepare_v2(db, sql, strlen(sql), &stmt, NULL);
+    result = sqlite3_step(stmt) ;
+    int cant;
+    if(result == SQLITE_ROW) cant = sqlite3_column_int(stmt, 0);
+    return cant;
+}
+
+int getNSeleccionda(int i){
+    sqlite3_stmt *stmt;
+    int result;
+    char sql[200] ;
+    sprintf(sql,"SELECT count(*) FROM Selecciona WHERE id_r = %i;",i);
+    result = sqlite3_prepare_v2(db, sql, strlen(sql), &stmt, NULL);
+    result = sqlite3_step(stmt) ;
+    int cant;
+    if(result == SQLITE_ROW) cant = sqlite3_column_int(stmt, 0);
+    return cant;
+}
+
+int getNUsuarios(){
+    sqlite3_stmt *stmt;
+    int result;
+    char sql[200] ;
+    sprintf(sql,"SELECT count(*) FROM Usuario;");
+    result = sqlite3_prepare_v2(db, sql, strlen(sql), &stmt, NULL);
+    result = sqlite3_step(stmt) ;
+    int cant;
+    if(result == SQLITE_ROW) cant = sqlite3_column_int(stmt, 0);
+    return cant;
+}
 int escribeE(int i,int e){
     sqlite3_stmt *stmt;
     int result;

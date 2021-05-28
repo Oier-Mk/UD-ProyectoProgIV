@@ -36,6 +36,7 @@ char* cont;
 ////////////////////////////////////////////////////////PARTE DE C/////////////////////////////////////////////////////////////
 
 int inputNumero(int size);
+char *inputString(int size);
 
 void CASO1(ArrayList *f);
 void anadirEspacio(ArrayList *f);
@@ -46,7 +47,6 @@ void CASO1_2(ArrayList *f);
 int getUnidad(int numero);
 int getDecena(int numero);
 int getCentena(int numero);
-char *inputString(int size);
 
 ///////////////////////////////////////////////////////PARTE DE C++////////////////////////////////////////////////////////////
 
