@@ -250,7 +250,7 @@ Formulario creaForm(int k) {
     f.ver = 1;//printf("Introduzca la version");
     f.fecha = sysdate();//printf("Introduzca la fecha");
     printf("Introduzca el numero de preguntas (2 digitos maximo): ");
-    f.nPreg = inputNumero(2);
+    f.nPreg = inputNumero(1);
     f.preguntas = malloc(f.nPreg * sizeof(Pregunta));
     escribeF(f.id,usu);
     for (int i = 0; i < f.nPreg; i++) {

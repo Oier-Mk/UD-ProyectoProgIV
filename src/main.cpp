@@ -45,11 +45,11 @@ extern "C" {
 //            break;
 //
 //            case 2:
-//                CASO2();///REALIZACION DE ENCUESTA
+//                CASO2();///REALIZACION DE ENCUESTA -- IÑIGO
 //            break;
 //
 //            case 3:
-//                CASO3();///VISUALIZACION DE ESTADISTICAS
+//                CASO3();///VISUALIZACION DE ESTADISTICAS --
 //            break;
 //
 //            case 4:
@@ -80,7 +80,6 @@ extern "C" {
 //    return 0;
 //}
 
-
 int main()	{
 
     sqlite3 *db;
@@ -102,7 +101,7 @@ int main()	{
     printf("Preg 22: %i\n",existe(22,2));
     printf("Preg 34: %i\n",existe(34,2));//NO EXISTE
     printf("Resp 111: %i\n",existe(111,3));
-    printf("Resp 555: %i\n",existe(555,3));//NO EXISTE
+    printf("Resp 555: %i\n",existe(543,3));//NO EXISTE
     //COMPRUEBA SI EXISTE EL USUARIO QUE SE PASA POR PARAMETRO
     printf("Usu pPicapiedra: %i\n",existeUsu("pPicapiedra"));
     //REGISTRA UN USUARIO EN LA BBDD DESPUES DE COMPROBAR SI EXISTE O NO
