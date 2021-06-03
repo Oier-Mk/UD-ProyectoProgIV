@@ -14,8 +14,6 @@ CMakeFiles/UD_ProyectoProgIV.dir/src/BaseDeDatos.c.o: ../src/BaseDeDatos.h
 CMakeFiles/UD_ProyectoProgIV.dir/src/BaseDeDatos.c.o: ../src/main.h
 CMakeFiles/UD_ProyectoProgIV.dir/src/BaseDeDatos.c.o: ../src/sqlite3.h
 
-CMakeFiles/UD_ProyectoProgIV.dir/src/Estadisticas.c.o: ../src/Estadisticas.c
-CMakeFiles/UD_ProyectoProgIV.dir/src/Estadisticas.c.o: ../src/Estadisticas.h
 
 CMakeFiles/UD_ProyectoProgIV.dir/src/Text.c.o: ../src/Api.h
 CMakeFiles/UD_ProyectoProgIV.dir/src/Text.c.o: ../src/Text.c
