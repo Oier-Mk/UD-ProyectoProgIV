@@ -16,7 +16,7 @@ private:
 	char* password;
 public:
 	Usuario();
-	Usuario(char*, char*);
+	Usuario(int id,char*, char*);
 	Usuario(const Usuario&);
 	void setNick(const char*);
 	char* getNick() const;

@@ -15,7 +15,7 @@ private:
 	int edad;
 public:
 	Entrevistado();
-	Entrevistado(int);
+	Entrevistado(int,int);
 	Entrevistado(const Entrevistado&);
 	void setEdad(int);
 	int getEdad() const;

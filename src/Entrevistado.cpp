@@ -9,16 +9,16 @@
 
 #include <iostream>
 #include <string.h>
-
 using namespace std;
 
 
-Entrevistado::Entrevistado():Persona(id) {
+Entrevistado::Entrevistado():Persona() {
 	this->edad = 0;
 }
 
-Entrevistado::Entrevistado(int):Persona(id){
-	this->edad = 0;
+Entrevistado::Entrevistado(int id, int edad):Persona(id){
+//    this->setId(111);
+    this->edad = edad;
 }
 
 Entrevistado::Entrevistado(const Entrevistado& e){

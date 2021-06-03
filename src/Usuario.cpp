@@ -13,21 +13,23 @@
 using namespace std;
 
 
-Usuario::Usuario():Persona(id) {
+Usuario::Usuario():Persona() {
 	this->nick = new char[1];
 	this->nick[0] = '\0';
 	this->password = new char[1];
 	this->password[0] = '\0';
 }
 
-Usuario::Usuario(char* n, char* pw):Persona(id){
-	this->nick = new char[strlen(n) + 1];
+Usuario::Usuario(int id, char* n, char* pw):Persona(id){
+//	this->setId(111);
+    this->nick = new char[strlen(n) + 1];
 	strcpy(this->nick, n);
 	this->password = new char[strlen(pw) + 1];
 	strcpy(this->password, pw);
 }
 
-Usuario::Usuario(const Usuario& u):Persona(id){
+Usuario::Usuario(const Usuario &u){
+	this->setId(u.getId());
 	this->nick = new char[strlen(u.nick) + 1];
 	strcpy(this->nick, u.nick);
 	this->password = new char[strlen(u.password) + 1];
@@ -35,7 +37,8 @@ Usuario::Usuario(const Usuario& u):Persona(id){
 }
 
 void Usuario::setNick(const char* n){
-	this->nick = n;
+    this->nick = new char[strlen(nick) + 1];
+    strcpy(this->nick, nick);
 }
 
 char* Usuario::getNick() const{
@@ -43,7 +46,8 @@ char* Usuario::getNick() const{
 }
 
 void Usuario::setPassword(const char* pw){
-	this->password = pw;
+    this->password = new char[strlen(pw) + 1];
+    strcpy(this->password, pw);
 }
 
 char* Usuario::getPassword() const{
