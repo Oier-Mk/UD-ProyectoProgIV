@@ -26,7 +26,7 @@ typedef struct{
 } Formulario;
 
 typedef struct{
-    int nObjetos;
+    int nObjetos;	//número de formularios dentro del array objetos de formularios.
     Formulario *objetos;
 } ArrayList;
 

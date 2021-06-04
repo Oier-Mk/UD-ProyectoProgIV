@@ -11,7 +11,7 @@ C_SRCS += \
 
 CPP_SRCS += \
 ../src/Entrevistado.cpp \
-../src/Estadisticas.cpp \
+../src/Estadistica.cpp \
 ../src/Persona.cpp \
 ../src/Usuario.cpp \
 ../src/main.cpp 
@@ -20,7 +20,7 @@ OBJS += \
 ./src/Api.o \
 ./src/BaseDeDatos.o \
 ./src/Entrevistado.o \
-./src/Estadisticas.o \
+./src/Estadistica.o \
 ./src/Persona.o \
 ./src/Text.o \
 ./src/Usuario.o \
@@ -35,24 +35,24 @@ C_DEPS += \
 
 CPP_DEPS += \
 ./src/Entrevistado.d \
-./src/Estadisticas.d \
+./src/Estadistica.d \
 ./src/Persona.d \
 ./src/Usuario.d \
 ./src/main.d 
 
 
 # Each subdirectory must supply rules for building sources it contributes
-src/%.o: ../src/%.c src/subdir.mk
+src/%.o: ../src/%.c
 	@echo 'Building file: $<'
 	@echo 'Invoking: Cross GCC Compiler'
-	gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"$(@:%.o=%.d)" -MT"$@" -o "$@" "$<"
+	gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"$(@:%.o=%.d)" -MT"$(@)" -o "$@" "$<"
 	@echo 'Finished building: $<'
 	@echo ' '
 
-src/%.o: ../src/%.cpp src/subdir.mk
+src/%.o: ../src/%.cpp
 	@echo 'Building file: $<'
 	@echo 'Invoking: Cross G++ Compiler'
-	g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"$(@:%.o=%.d)" -MT"$@" -o "$@" "$<"
+	g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"$(@:%.o=%.d)" -MT"$(@)" -o "$@" "$<"
 	@echo 'Finished building: $<'
 	@echo ' '
 

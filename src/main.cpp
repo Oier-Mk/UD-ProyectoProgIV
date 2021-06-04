@@ -12,29 +12,34 @@
 #include "Entrevistado.h"
 #include <stdio.h>
 #include <stdlib.h>
+#include <iostream>
+#include <string.h>
+
+using namespace std;
+
+
 extern "C" {
 	#include "Api.h"
 	#include "Text.h"
 	#include "BaseDeDatos.h"
 }
 
-//int main()	{
-//
-//    int result;
-//
-//    result = abrir();
-//
-//
+int main()	{
+
+    int result;
+
+    result = abrir();
+
+
 //    ///ESCRITURA INICIAL DE LOS DATOS QUE HAY EN EL FICHERO
-//    ArrayList *f;
-//    FILE* infile = abrirFichero(1);
-//    ArrayList temp = readFormulario(infile);
-//    f = &temp;
-//    nF = getNFormularios();
-//    cerrarFichero(infile);
+    FILE* infile = abrirFichero(1);
+    ArrayList temp = readFormulario(infile);	//readFormulario devuelve un ArrayList con todos los formularios existentes en el fichero infile.
+    formularios = &temp;
+    nF = getNFormularios();	//getNFormularios devuelve el número de formularios por fichero.
+    cerrarFichero(infile);
 //
 //    ///IMPRIME LOS FORMULARIOS LEIDOS DEL FICHERO AL INICIAR EL PROGRAMA
-//    printF(f);
+    printF(formularios);
 //
 //    ///BUCLE PRINCIPAL DEL PROGRAMA
 //    int boolean = 1;
@@ -134,35 +139,38 @@ extern "C" {
 //    return 0;
 //}
 
-int main()	{
-    sqlite3 *db;
-    int result;
+//int main()	{
+//    sqlite3 *db;
+//    int result;
+//
+//    result = abrir();
+//
+//    Entrevistado e(99,40);
+//    escribeE(e.getId(),e.getEdad());
+//    e.imprimir();
+//    Usuario u(99,"nick","pass");
+//    escribeU(u.getId(), u.getNick(),u.getPassword());
+//    u.imprimir();
+//
+//    return 0;
+//}
 
-    result = abrir();
 
-    Entrevistado e(99,40);
-    escribeE(e.getId(),e.getEdad());
-    e.imprimir();
-    Usuario u(99,"nick","pass");
-    escribeU(u.getId(), u.getNick(),u.getPassword());
-    u.imprimir();
+//for(int i = 0; i<formularios->nObjetos; i++){											//nObjetos es el número de formularios que hay en el fichero.
+//	cout << "Existen " << formularios->nObjetos << "formularios disponibles." << endl;
+//	int nPreguntas = formularios->objetos[i].nPreg;										//Recorremos el array de formularios de la estructura ArrayList.
+//	cout << "Para el formulario " << formularios->objetos->tit << " hay " << nPreguntas << " preguntas." << endl; //Sacamos de cada formulario, el número de preguntas.
+//	for(int j = 0; j<nPreguntas; i++){													//Recorremos las preguntas de cada formulario, y sacamos el número de respuestas por pregunta por cada formulario.
+//		int nRespuestas = formularios->objetos[i].preguntas[j].nResp;
+//		for(int k=0; k<nRespuestas; k++){
+//			int nVecesSeleccionada = getNSeleccionda(formularios->objetos[i].preguntas[j].respuestas[k].id);
+//			printf("%s", formularios->objetos[i].preguntas[j].respuestas[k].resp);
+//			for(int l = 0; l<nVecesSeleccionada; l++){
+//				printf("|");
+//			}
+//			printf("\n");
+//		}
+//	}
+//}
 
-    return 0;
 }
-
-
-//for(formularios){
-//    n = formularios[i].nPreg;
-//    for(preguntas){
-//        n = preguntas[i].nResp;
-//        print(preguntaActual.preg)
-//        for(respuestas){
-//            print(respuestaActual.resp);
-//            n = getNSeleccionda(respuestaActual.id);
-//            print("R i ha sido seleccionada; ")
-//            for(i<n){
-//                print("|");
-//            }
-//        }
-//}
-//}
